@@ -1,13 +1,6 @@
-import phonenumbers
-from phonenumbers import geocoder , carrier , timezone
+import socket as SK
 
-phone_numbers = phonenumbers.parse("+16695918525")
+hostName = SK.gethostname()
+ipaddress = SK.gethostbyname(hostName)
 
-#Country Name
-print((geocoder.description_for_number(phone_numbers,'en')))
-
-#Carrier SimCard
-print(carrier.name_for_number(phone_numbers, 'en'))
-
-#TimeZone of this Country
-print(timezone.time_zones_for_number(phone_numbers))
+print(f"My IP Address : {ipaddress}")
